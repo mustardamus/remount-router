@@ -1,6 +1,6 @@
 {
   "name": "remount-router",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "A simple file-based router for Express.js with automatic routes remounting on file changes without the need to restart the server.",
   "license": "MIT",
   "author": "Sebastian Senf <contact@mustardamus.com> (http://mustardamus.com)",
@@ -20,10 +20,6 @@
     "hot-reload",
     "development",
     "api"
-  ],
-  "files": [
-    "lib",
-    "README.md"
   ],
   "scripts": {
     "test": "tape tests/**/*-test.js | tap-summary"
