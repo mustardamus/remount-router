@@ -22,7 +22,8 @@
     "api"
   ],
   "files": [
-    "lib"
+    "lib",
+    "README.md"
   ],
   "scripts": {
     "test": "tape tests/**/*-test.js | tap-summary"
