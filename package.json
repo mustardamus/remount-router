@@ -1,0 +1,43 @@
+{
+  "name": "remount-router",
+  "version": "0.1.0",
+  "description": "A simple file-based router for Express.js with automatic routes remounting on file changes without the need to restart the server.",
+  "license": "MIT",
+  "author": "Sebastian Senf <contact@mustardamus.com> (http://mustardamus.com)",
+  "main": "lib/remount-router.js",
+  "homepage": "https://github.com/mustardamus/remount-router",
+  "bugs": "https://github.com/mustardamus/remount-router/issues",
+  "repository" : {
+    "type" : "git",
+    "url" : "https://github.com/mustardamus/remount-router.git"
+  },
+  "keywords": [
+    "express",
+    "express.js",
+    "router",
+    "file-router",
+    "reload",
+    "hot-reload",
+    "development",
+    "api"
+  ],
+  "files": [
+    "lib"
+  ],
+  "scripts": {
+    "test": "tape tests/**/*-test.js | tap-summary"
+  },
+  "dependencies": {
+    "chokidar": "^1.7.0",
+    "colors": "^1.1.2",
+    "express": "^4.15.4",
+    "glob": "^7.1.2",
+    "import-fresh": "^2.0.0"
+  },
+  "devDependencies": {
+    "fs-extra": "^4.0.1",
+    "supertest": "^3.0.0",
+    "tap-summary": "^3.0.2",
+    "tape": "^4.8.0"
+  }
+}
