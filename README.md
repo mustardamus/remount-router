@@ -6,6 +6,7 @@ server.
 
 ![Quick Demo](https://i.imgur.com/84AzFCR.gif)
 
+
 ## Installation
 
 ```bash
@@ -17,6 +18,7 @@ or
 ```bash
 yarn add remount-router
 ```
+
 
 ## Initialization
 
@@ -41,6 +43,7 @@ app.listen(17777)
 
 This will parse all `*.js` files in the `./controllers` directory and mounts it
 to the `/api` endpoint.
+
 
 ## Controllers
 
@@ -77,11 +80,13 @@ The verb (`GET`, `POST`, `PUT`, etc.) can be any
 [routing method](https://expressjs.com/en/4x/api.html#app.METHOD) offered by
 Express.js (`app.get()`, `app.post()`, `app.put()`, etc.).
 
+
 ## Automatic Route Remounting
 
 If the option `isDev` is `true`, all matching controller files will be watched
 for changes (adding/removing files, editing files). If a change is detected, a
 new router is generated and remounted to the `apiEndpoint`.
+
 
 ## Options
 
@@ -133,6 +138,38 @@ This defaults to `true` if the `NODE_ENV` environment variable is not
 `production`, otherwise it is `false`. File watching and route remounting will
 only happen if this option is `true`.
 
+
+## Using it with Nuxt.js
+
+Implementing `remount-router` in [Nuxt.js](https://nuxtjs.org/) is super simple.
+After you've installed the module (`yarn add remount-router`), add it to your
+`nuxt.config.js` as a module like so:
+
+```javascript
+module.exports = {
+  modules: [
+    'remount-router/nuxt'
+  ]
+}
+```
+
+Notice that we don't pass any options: the `expressAppInstance` is created for
+you, and the `controllersPath` is set to `/controllers` inside Nuxt's `srcDir`.
+
+However, you can pass custom options like so:
+
+```javascript
+module.exports = {
+  modules: [
+    ['remount-router/nuxt', {
+      controllersGlob: '*!(.test).js',
+      apiEndpoint: '/api/v1'
+    }]
+  ]
+}
+```
+
+
 ## Development
 
 ```bash
@@ -140,9 +177,12 @@ yarn
 yarn test
 ```
 
+
 ## Changelog
 
+- 2017-08-29: Add Nuxt.js module wrapper
 - 2017-08-25: Initial release
+
 
 ## License
 
