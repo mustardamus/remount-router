@@ -155,6 +155,7 @@ module.exports = {
 
 Notice that we don't pass any options: the `expressAppInstance` is created for
 you, and the `controllersPath` is set to `/controllers` inside Nuxt's `srcDir`.
+The `isDev` option equals to Nuxt's `dev` option.
 
 However, you can pass custom options like so:
 
